@@ -7,11 +7,7 @@ public class PlayerInvisibility : MonoBehaviour {
 	public float ManaAmountConsumtionPerSecond = 20;
 	public float ManaAmountRestoredPerSecond = 10;
 
-	private static bool isPlayerInvisible = false;
-	public static bool IsPlayerInvisible {
-		get { return isPlayerInvisible; }   // get method
-		set { isPlayerInvisible = value; }  // set method
-	}
+	public static bool IsPlayerInvisible { get; set; } = false;
 
 	private Player player;
 
@@ -36,18 +32,18 @@ public class PlayerInvisibility : MonoBehaviour {
 		//}
 
 		if (InputManager.mainActionEngaged) {
-			isPlayerInvisible = true;
+			IsPlayerInvisible = true;
 		} else {
-			isPlayerInvisible = false;
+			IsPlayerInvisible = false;
 		}
 
-		if (isPlayerInvisible) {
+		if (IsPlayerInvisible) {
 			// use mana
 
 			if (player.CanConsumeManaAmount (manaAmountToConsume)) {
 				player.UseMana (manaAmountToConsume);
 			} else {
-				isPlayerInvisible = false;
+				IsPlayerInvisible = false;
 			}
 
 		} else {

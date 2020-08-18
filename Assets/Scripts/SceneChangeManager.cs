@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChangeManager : MonoBehaviour {
 	public void LoadGameScene ()
 	{
+		PlayerInvisibility.IsPlayerInvisible = false;
 		SceneManager.LoadScene (sceneName: "SampleScene");
 	}
 

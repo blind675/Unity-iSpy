@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  movmentSpeed: 3
+  movmentSpeed: 4
   triggerSeekDistance: 8
   targetProximityDistance: 1.5
   animator: {fileID: 3850749118809210901}
